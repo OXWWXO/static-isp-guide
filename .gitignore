@@ -1,0 +1,10 @@
+*.local.*
+.env
+.env.*
+!.env.example
+node_modules/
+config.yaml
+subscription.yaml
+cache.db
+*.log
+.DS_Store

@@ -1,0 +1,81 @@
+# 独立配置示例，所有占位符必须在本地替换。不要公开真实订阅或凭据。
+mixed-port: 7897
+allow-lan: false
+bind-address: 127.0.0.1
+mode: rule
+log-level: info
+ipv6: false
+
+proxy-providers:
+  cheap-entry:
+    type: http
+    url: "https://subscription.example.invalid/CHANGE_ME"
+    path: ./providers/cheap-entry.yaml
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+
+proxies:
+  - name: ISP-出口
+    type: socks5
+    server: isp.example.invalid
+    port: 1080
+    username: CHANGE_ME
+    password: CHANGE_ME
+    udp: false
+    dialer-proxy: ISP-入口
+
+proxy-groups:
+  - name: ISP-入口
+    type: select
+    use: [cheap-entry]
+  - name: ISP-服务
+    type: select
+    proxies: [ISP-出口]
+
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: [223.5.5.5]
+  proxy-server-nameserver: [https://dns.alidns.com/dns-query]
+  nameserver: [https://dns.alidns.com/dns-query]
+  nameserver-policy:
+    "+.chatgpt.com": "https://1.1.1.1/dns-query#ISP-出口"
+    "+.openai.com": "https://1.1.1.1/dns-query#ISP-出口"
+    "+.oaistatic.com": "https://1.1.1.1/dns-query#ISP-出口"
+    "+.oaiusercontent.com": "https://1.1.1.1/dns-query#ISP-出口"
+    "+.claude.ai": "https://1.1.1.1/dns-query#ISP-出口"
+    "+.claude.com": "https://1.1.1.1/dns-query#ISP-出口"
+    "+.anthropic.com": "https://1.1.1.1/dns-query#ISP-出口"
+    "+.claudeusercontent.com": "https://1.1.1.1/dns-query#ISP-出口"
+
+# TUN 按需打开。开启前确认管理员权限、服务模式及其他 VPN 路由冲突。
+tun:
+  enable: false
+  stack: mixed
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack: [any:53]
+
+rules:
+  - "AND,((NETWORK,UDP),(DST-PORT,443),(DOMAIN-SUFFIX,chatgpt.com)),REJECT"
+  - "AND,((NETWORK,UDP),(DST-PORT,443),(DOMAIN-SUFFIX,openai.com)),REJECT"
+  - "AND,((NETWORK,UDP),(DST-PORT,443),(DOMAIN-SUFFIX,oaistatic.com)),REJECT"
+  - "AND,((NETWORK,UDP),(DST-PORT,443),(DOMAIN-SUFFIX,oaiusercontent.com)),REJECT"
+  - "AND,((NETWORK,UDP),(DST-PORT,443),(DOMAIN-SUFFIX,claude.ai)),REJECT"
+  - "AND,((NETWORK,UDP),(DST-PORT,443),(DOMAIN-SUFFIX,claude.com)),REJECT"
+  - "AND,((NETWORK,UDP),(DST-PORT,443),(DOMAIN-SUFFIX,anthropic.com)),REJECT"
+  - "AND,((NETWORK,UDP),(DST-PORT,443),(DOMAIN-SUFFIX,claudeusercontent.com)),REJECT"
+  - DOMAIN-SUFFIX,chatgpt.com,ISP-服务
+  - DOMAIN-SUFFIX,openai.com,ISP-服务
+  - DOMAIN-SUFFIX,oaistatic.com,ISP-服务
+  - DOMAIN-SUFFIX,oaiusercontent.com,ISP-服务
+  - DOMAIN-SUFFIX,claude.ai,ISP-服务
+  - DOMAIN-SUFFIX,claude.com,ISP-服务
+  - DOMAIN-SUFFIX,anthropic.com,ISP-服务
+  - DOMAIN-SUFFIX,claudeusercontent.com,ISP-服务
+  - MATCH,ISP-入口

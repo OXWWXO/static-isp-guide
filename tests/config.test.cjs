@@ -1,0 +1,30 @@
+const fs = require('node:fs');
+const vm = require('node:vm');
+const assert = require('node:assert/strict');
+const path = require('node:path');
+const source = fs.readFileSync(path.join(__dirname, '../examples/clash-verge-script.js'), 'utf8');
+function run(settings, config) {
+  const context = vm.createContext({ config: JSON.parse(JSON.stringify(config)), settings });
+  vm.runInContext(source + '\nObject.assign(ISP_SETTINGS, settings); result = main(config);', context);
+  return JSON.parse(JSON.stringify(context.result));
+}
+const valid = { server: '192.0.2.10', port: 1080, username: 'sample', password: 'sample', entryNodes: ['入口A'], entryProviders: [] };
+const base = () => ({ proxies: [{ name: '入口A', type: 'ss', server: '192.0.2.20', port: 443 }], 'proxy-groups': [{ name: '原组', type: 'select', proxies: ['入口A'] }], rules: ['DOMAIN-SUFFIX,example.com,DIRECT', 'MATCH,原组'], dns: { enable: true, nameserver: ['1.1.1.1'], 'nameserver-policy': { 'example.com': '8.8.8.8' } } });
+assert.throws(() => run({}, base()), /真实 ISP/);
+assert.throws(() => run({ ...valid, entryNodes: ['不存在'] }, base()), /入口节点/);
+assert.throws(() => run({ ...valid, port: 65536 }, base()), /端口/);
+const cycle = base(); cycle.proxies[0]['dialer-proxy'] = 'ISP-服务';
+assert.throws(() => run(valid, cycle), /循环/);
+const out = run(valid, base());
+assert.equal(out.proxies.find(p => p.name === 'ISP-出口')['dialer-proxy'], 'ISP-入口');
+assert.deepEqual(out['proxy-groups'].find(g => g.name === 'ISP-服务').proxies, ['ISP-出口']);
+assert.deepEqual(out.rules.slice(-2), base().rules);
+assert.equal(out.dns['nameserver-policy']['example.com'], '8.8.8.8');
+assert.deepEqual(out.dns.nameserver, ['1.1.1.1']);
+assert.deepEqual(run(valid, out), out, '重复应用应幂等');
+const providerBase = { proxies: [], 'proxy-providers': { sub: { type: 'http', url: 'https://example.invalid/sub' } }, rules: ['MATCH,DIRECT'] };
+const fromProvider = run({ ...valid, entryNodes: [], entryProviders: ['sub'] }, providerBase);
+assert.deepEqual(fromProvider['proxy-groups'][0].use, ['sub']);
+assert.throws(() => run({ ...valid, entryNodes: [], entryProviders: ['unknown'] }, providerBase), /proxy-provider/);
+assert.throws(() => run({ ...valid, extraDomains: ['https://bad.example/path'] }, base()), /域名/);
+console.log('Passed: placeholders, ports, missing nodes/providers, cycle guard, fixed exit, original rules/DNS, provider-only subscription, idempotence.');
