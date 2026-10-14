@@ -1,41 +1,55 @@
-# 静态 ISP 推荐与链式代理指南
+# 💥 核弹级视觉！2026 静态 ISP 六大厂商对比与链式代理指南
 
-**买一个独享静态 ISP，再配一条便宜、在自己网络上可用的入口线路。** 普通流量走入口，需要固定出口的网站走 ISP：入口负责接入，ISP 负责固定出口。
+![数字能量爆发、服务器与光纤网络组成的静态 ISP 指南封面](assets/isp-hero.png)
 
-适合想买 **1 个 IP、租 1 个月**，用于网页、ChatGPT、Claude 等服务的读者。本文是资料整理与配置指南，没有进行商家线路实测，也不承诺账号稳定性或网站长期可用。
+<p align="center"><strong>六大知名商家 · 单 IP 月付 · 真实来源点评 · Clash Verge 链式配置</strong></p>
 
-**配套仓库：[VPN-suggestions](https://github.com/OXWWXO/VPN-suggestions)**，查入口线路的套餐、限制和原评测。本仓库不使用代理商推广链接。
+**把眼花缭乱的 ISP 宣传页摊开：价格门槛、独享真假、流量限制、用户吐槽，一页看清。** 再用一条便宜且可用的入口线路，把需要固定出口的流量交给独享静态 ISP。
 
-> 核查日期：2026-10-14。价格均为美元，人民币入口价格另行注明。官网起价不等于美国单 IP 结算价，税费、最低充值、国家和附加服务另算。
+适合想买 **1 个 IP、租 1 个月**，用于网页、ChatGPT、Claude 等服务的读者。本仓库是资料整理与配置指南，没有商家线路实测。“核弹级”描述封面的视觉风格，不是速度、解锁能力或账号安全承诺。
 
-## 快速选择
+**配套仓库：[VPN-suggestions](https://github.com/OXWWXO/VPN-suggestions)**。入口负责接入，ISP 负责固定出口；普通流量走入口。本仓库商家入口使用官方直达链接，不加推广参数。
 
-| 目标 | 先比较 | 理由 |
+> 更新：2026-10-15。美元价格与税费以当前结算页为准。部分历史点评另标日期；共享起价、每 IP 单价、套餐最低实付不能混为一谈。
+
+[挑商家](#六大知名-isp-商家直达) · [看别人怎么说](#别人怎么说优点和吐槽一起看) · [学链式配置](docs/clash-verge.md) · [查原始证据](docs/evidence.md)
+
+## 六大知名 ISP 商家直达
+
+名单综合品牌覆盖、公开文档与第三方评测可见度选取，**不宣称全球知名度前六，也没有官方“权威排名”**。企业级品牌与适合个人小额购买是两回事。
+
+| 商家 / 官方产品入口 | 独享套餐参考 | 实付门槛与注意点 | 更适合谁 |
+| --- | --- | --- | --- |
+| **[Bright Data](https://brightdata.com/pricing/proxy-network/isp-proxies)** | 10 个独享 IP **$35/月** | **$3.50/IP 不等于能单买 $3.50**；共享 10 个 $18 是另一档；100GB/IP/月 FUP，超额可能收费 | 企业管理功能、批量购买 |
+| **[Oxylabs](https://oxylabs.io/pricing/dedicated-isp-proxies)** | 当前页面独享 **$3/IP**，Starter **$30/月** | 页面已展示统一订阅/产品额度；不要把 $3 当作最低实付。旧 5 IP $16 记录不再作为当前推荐价 | 企业服务、ASN 选择 |
+| **[Decodo（原 Smartproxy）](https://decodo.com/proxies/isp-proxies/pricing)** | 3 个独享 IP **$9.99/月＋税** | 少量套餐仍需买 3 个；$0.27 起是不同格式和条件，不能代替独享报价 | 需要几个 IP、重视自助管理 |
+| **[Webshare](https://www.webshare.io/dedicated-static-residential-proxy)** | 独享页面展示 20 个 IP **$42/月** | 平均 $2.10/IP；可定制数量须后台核价，不能推断单 IP 同价。Private 可能共享，选 Dedicated；流量档需单独核对 | 批量和自定义套餐 |
+| **[IPRoyal](https://iproyal.com/pricing/static-residential-proxies/)** | 30 天官网 **$2.70/IP 起**；本次用户后台反馈 **$4** | $4 未取得美国结算截图；100GB/IP/30 天；额外要求和流量可能收费 | 单 IP 月付、需要用量统计 |
+| **[Proxy-Seller](https://proxy-seller.com/isp/)** | 支持 1 IP；本次用户截图日本 **$3/月** | **美国待核价**；默认 FUP 约 100GB/IP、100 并发；超额后的具体 Mbps 未公布 | 单 IP 小额月付、按地区比价 |
+
+### 如果你只买一个月、一个 IP
+
+先核对 **IPRoyal 和 Proxy-Seller 的目标国家结算价及网站兼容范围**。若只用一个出口，别为了品牌知名度盲买 3、10 或 20 个 IP；Webshare 的自定义数量另查后台，企业品牌也可能有按量或新的额度选项。
+
+六家的价格是可核对的入口，不能替代真实测试。更多流量规则与价格变化见 [官方证据](docs/evidence.md)。早期整理中的小众低价名单已退出首页推荐，避免把未核实的低价商家与主流品牌混排。
+
+## 别人怎么说：优点和吐槽一起看
+
+以下均为**他人的评价摘要**，不是本仓库自己的测评。评测网站可能使用推广链接；用户评论是个例，样本与用途不统一。详情与日期见 [六家点评档案](docs/reviews.md)。
+
+| 商家 | 有参考价值的好评 / 评测判断 | 短板 / 用户反馈 |
 | --- | --- | --- |
-| 尽量压低成本 | Proxy-Cheap、Geonix、MarsProxies | 有接近 $3 的月付页面报价，单 IP 条件相对容易核对 |
-| 比较美国独享 ISP | Evomi Private、IPRoyal、Proxy-Seller | 注意 Evomi 的 $1 是共享；IPRoyal 实际单 IP 可能高于宣传起价 |
-| 愿意试更小众的低价商家 | Proxynet | 基础档 $1.80/IP/月，但最低充值、美国库存、目标访问附加项仍需确认 |
-| 更重视企业服务 | Oxylabs、Decodo、Bright Data | 品牌和文档可比较；不要为只用一个 IP 盲买批量套餐 |
-
-## 单 IP 月付价格表
-
-下表按公开参考报价排列，**不是线路质量排名，也不是“已经实付验证”的最低价榜**。商品名称中的 static、ISP、private、dedicated 必须一起核对，尤其要确认网站看到的出口 IP 固定且独享。
-
-| 商家 / 产品 | 月价参考 | 是否独享 | 单 IP / 美国结算状态 | 主要限制与来源 |
-| --- | ---: | --- | --- | --- |
-| [Proxynet ISP](https://proxynet.io/static-isp-residential-proxy/pricing) | $1.80/IP/月基础档 | 官网称独享 | 未核对最终付款门槛及库存 | 单 IP 默认约 15Mbps；所有网站访问 +$0.50，高速 +$1；$1 需 $300 余额档 |
-| [Evomi Private ISP](https://evomi.com/product/static-residential) | $2.50/IP/月起 | 是 | 美国 Ashburn / AT&T 展示；最低数量未核实 | Shared $1 不独享；Virgin $4.50 起。产品页称不限量，尚未完整核实 FUP |
-| [Geonix ISP](https://geonix.com/isp/) | 30 天默认配置 $2.70/IP | 是 | 有美国选项，默认报价不是美国核价 | Proxy-Sale 原 ISP 链接现跳转此站；流量与 FUP 需结账前复核 |
-| [Proxy-Cheap Static Residential IPv4](https://www.proxy-cheap.com/services/static-residential-proxies) | 1 Month $2.71 | 是 | 官网支持单 IP；美国运营商价格待选 | 标注 100+Mbps、100+ threads、不限流量；FUP 未完整核实 |
-| [MarsProxies ISP](https://marsproxies.com/proxies/unmetered-residential-proxies/) | 1 IP $2.99 | 是 | 支持 30 天，有美国；国家结算价待选 | 100GB/IP/月额度，订单合并计算；不要用 $1.35 起价代替单月单 IP |
-| [Proxy-Seller ISP](https://proxy-seller.com/isp/) | 本次会话日本截图 $3/月；美国待核价 | 是 | 支持 1 IP；日本价格不当作美国报价 | FUP 默认约 100GB/IP、100 并发；超额降速数值未查明 |
-| [IPRoyal ISP](https://iproyal.com/pricing/static-residential-proxies/) | 官网 $2.70 起；会话用户后台反馈 $4 | 是 | $4 是用户反馈，未取得美国结算截图 | 100GB/IP/30 天；独享超额降速，可买额外流量；附加要求可能收费 |
-
-其他值得知道的门槛：[Webshare 独享](https://www.webshare.io/dedicated-static-residential-proxy)页面 20 个 IP $42/月；[Decodo 独享](https://decodo.com/proxies/isp-proxies/pricing)页面 3 个 $9.99/月加税；[Oxylabs 独享](https://oxylabs.io/pricing/dedicated-isp-proxies)产品专页展示 5 个 $16/月，价格页面之间可能有不同报价，以后台为准。
-
-更多起价陷阱、官方 FUP 与评价见 [资料与证据](docs/evidence.md)。IP 评分是第三方判断，不是 ChatGPT / Claude 官方检测结果。
+| **Bright Data** | Proxyway 认为平台功能和企业管理工具丰富。[评测](https://proxyway.com/reviews/bright-data-proxies) | 同评测提醒价格和上手复杂度；2026-10 Trustpilot 有客服处理拖延投诉，商家回复称问题已解决。[评论及回复](https://www.trustpilot.com/review/brightdata.com) |
+| **Oxylabs** | Proxyway 将其列为企业取向头部厂商；2026-10-12 用户 Anto R. 对 ISP 和客服给出好评。[用户评论](https://www.trustpilot.com/review/oxylabs.io) | 一句好评没有样本与地区，不能推出所有节点表现；当前付费结构对只买单 IP 的读者需要仔细算总额 |
+| **Decodo** | Proxyway 评价其功能、价格、自助体验较均衡。[评测](https://proxyway.com/reviews/smartproxy-proxies) | 同评测说明不同 ISP 格式计费不同；独享入门 3 IP，不是单 IP 价格。基础性能评测不能当 AI 账号测试 |
+| **Webshare** | Proxyway 认可自助定制和价格灵活。[评测](https://proxyway.com/reviews/webshare-proxies) | 用户报告独享静态代理访问 Reddit 出现 403，但其他网站可用；这不能推断 ChatGPT / Claude 同样不通。[原帖](https://www.reddit.com/r/proxies/comments/1uy02t5/getting_reddit_403s_with_webshare_static/) |
+| **IPRoyal** | 有美国 ISP 用于 ChatGPT / Claude 的个人成功记录。[使用记录](https://kerrynotes.com/ai-traffic-routing/) | 有连接、评分和售后投诉；静态 ISP 不等于永远“零风险”。[美国 ISP 用户讨论](https://www.reddit.com/r/proxies/comments/1qu301b/2_years_with_iproyal_and_i_feel_completely/) |
+| **Proxy-Seller** | 有 ISP 用户称问题及时得到客服解决。[用户好评](https://www.trustpilot.com/review/proxy-seller.com?page=8) | 美国纽约 ISP 用户投诉维护换 IP；另有 FUP 超额限流争议。[评价](https://www.trustpilot.com/review/proxy-seller.com?page=2) · [FUP 讨论](https://www.reddit.com/r/proxies/comments/1w75x4x/warning_proxysellers_hidden_100gb_fup_policy_zero/) |
 
 ## 便宜入口 + 固定出口，怎么组合
+
+![链式代理：设备经过入口，再经过固定 ISP 出口访问网站；普通流量从入口分支](assets/isp-chain.png)
+
 
 ```mermaid
 flowchart LR

@@ -1,6 +1,6 @@
 # 资料与证据
 
-核查日期：2026-10-14。本文没有访问商家付费账户，也没有商家线路实测。区分“官网报价”“用户个例”“编辑建议”，禁止把三者写成统一测速结论。
+更新日期：2026-10-15；历史低价采集日期为 2026-10-14。本文没有访问商家付费账户，也没有商家线路实测。区分“官网报价”“用户个例”“编辑建议”，禁止把三者写成统一测速结论。当前首页以六家知名商家为主，历史低价资料不作为推荐排名。
 
 ## 官方来源
 
@@ -16,11 +16,14 @@
 | IPRoyal | ISP 首购退款通常有 24 小时、500MB 和服务问题条件，不能称无条件试用 | [退款政策](https://help.iproyal.com/en/articles/7222615-what-is-your-refund-policy) |
 | IPRoyal | 可付费列出特定目标网站，官方称可保证网站兼容；范围需与客服确认 | [额外需求](https://help.iproyal.com/zh-CN/articles/11478075-什么是-额外需求-功能-如何使用) |
 | Bright Data | 每 IP 每月 100GB FUP；订单分配使用，超额可能额外收费 | [ISP 定价 FAQ](https://brightdata.com/pricing/proxy-network/isp-proxies) |
-| Oxylabs | 独享 ISP 专页含 5 IP $16/月；不限量受 FUP 约束；月阈值 100GB/IP | [定价](https://oxylabs.io/pricing/dedicated-isp-proxies) · [FUP](https://developers.oxylabs.io/documentation/cn/dai-li/dedicated-isp-proxies/self-service/fair-usage-policy) |
+| Oxylabs | 2026-10-15 读取已为统一订阅：独享 $3/IP、Starter $30/月；旧 5 IP $16 不再作为当前推荐价。不限量仍受 FUP 约束，具体规则需随当前套餐核对 | [定价](https://oxylabs.io/pricing/dedicated-isp-proxies) · [FUP](https://developers.oxylabs.io/documentation/cn/dai-li/dedicated-isp-proxies/self-service/fair-usage-policy) |
+| Bright Data 当前价格 | 独享 10 IP $35/月；共享 10 IP $18/月，分别列示 | [定价页](https://brightdata.com/pricing/proxy-network/isp-proxies) |
+| Decodo 当前价格 | 独享 3 IP $9.99/月加税；与共享 Pay/IP 分开 | [定价页](https://decodo.com/proxies/isp-proxies/pricing) |
+| Webshare 当前价格 | Dedicated 页面 20 IP $42/月；Private 可能共享，自定义数量需后台核价 | [独享页面](https://www.webshare.io/dedicated-static-residential-proxy) |
 
 未完整核实某商家 FUP 不表示该商家不存在限制；产品页的 unlimited 文案不足以证明无限速、无限并发。
 
-## 低价宣传为什么不等于一个月实付
+## 历史低价资料：已退出首页推荐
 
 - Evomi 的 $1 是共享；独享从 $2.50 起，最低数量仍待后台核实。
 - Roundproxies 公开最小展示 10 IP $14，不能按 $1.40 作为单 IP 总支出：[套餐页](https://roundproxies.com/isp-proxies/)。
@@ -29,6 +32,8 @@
 - 极便宜 IPv6、按 GB 轮换、短租和批量 IP 不与独享 IPv4 30 天总价混排。
 
 ## ChatGPT / Claude 的公开反馈
+
+六家最新的评测判断、正反用户反馈与日期统一见 [点评档案](reviews.md)。品牌评价和产品级测试分开；评测作者的推广关系也在该页说明。
 
 ### IPRoyal
 

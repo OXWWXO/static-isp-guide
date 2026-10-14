@@ -1,5 +1,8 @@
 # Clash Verge Rev：入口线路 + 静态 ISP
 
+![两跳接力：设备、入口、ISP 出口、网站](../assets/isp-chain.png)
+
+
 配套入口参考：[VPN-suggestions](https://github.com/OXWWXO/VPN-suggestions)。先选最低成本但能稳定接入的月付线路，再买一个独享 ISP。先备份当前配置，保留可以恢复的原订阅。
 
 ## 图形界面配置
