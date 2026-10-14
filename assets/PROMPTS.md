@@ -4,7 +4,9 @@
 
 ## isp-hero.png
 
-> Use case: ads-marketing / stylized-concept. Create an original luxurious cinematic widescreen GitHub README cover for a Chinese static ISP comparison repository. Landscape 16:9. A monumental abstract digital mushroom-cloud-shaped energy bloom, symbolic nuclear-scale visual impact, made entirely of molten amber fiber-optic particles and electric cyan data ribbons above a dark obsidian holographic globe. No real weapons, no destruction, no people. Six luminous server monoliths sit around the globe linked by precise glasslike fiber cables, a single dazzling exit portal in the foreground. Ultra detailed premium 3D editorial art, volumetric light, black navy background, amber and icy cyan, spectacular but beautifully composed, high contrast, generous breathing room. Render these exact Chinese headline words legibly as a large tasteful integrated editorial title: '核弹级视觉 · 静态 ISP 指南'. Small subtitle exactly: '知名厂商对比 × 用户点评 × 链式代理'. No provider logos, no prices, no ranking numbers, no claims of safety or guaranteed speed, no watermark.
+原封面已通过内置 image_gen 编辑，当前文字为“静态 ISP 选购指南”，引用文件保持不变。修订提示词：
+
+> Edit this cover image. Replace ONLY the large central headline with the exact Chinese text '静态 ISP 选购指南', centered and using the same luxurious cyan-and-amber editorial typography. Completely remove the old headline including the old visual-style wording and the dot. Preserve the subtitle '知名厂商对比 × 用户点评 × 链式代理', original widescreen dimensions, server monoliths, globe, fiber cables, energy cloud, all colors, and polished cinematic style. No other new words, no emoji, no nuclear-related text. Make the revised headline clean and legible.
 
 ## isp-chain.png
 
