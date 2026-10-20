@@ -5,7 +5,7 @@
   <source media="(max-width: 640px)" srcset="assets/isp-cover-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/isp-cover-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/isp-cover-light.svg">
-  <img alt="固定出口，从容连接。六家静态 ISP 厂商，选购与配置一起看。" src="assets/isp-cover-light.svg" width="1200">
+  <img alt="固定出口，连接更有数。六家厂商对比、配置图解与出口验证。" src="assets/isp-cover-light.svg" width="1200">
 </picture>
 
 <p align="center">
