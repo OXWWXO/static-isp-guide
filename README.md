@@ -1,21 +1,21 @@
-# 2026 静态 ISP 推荐｜六大知名厂商、用户点评与链式代理配置
+# 静态 ISP 选购与配置指南
 
 <picture>
+  <source media="(max-width: 640px) and (prefers-color-scheme: dark)" srcset="assets/isp-cover-mobile-dark.svg">
+  <source media="(max-width: 640px)" srcset="assets/isp-cover-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/isp-cover-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/isp-cover-light.svg">
-  <img alt="固定出口，从一条链开始：六家厂商、选购门槛与链式配置" src="assets/isp-cover-light.svg" width="1000">
+  <img alt="固定出口，从容连接。六家静态 ISP 厂商，选购与配置一起看。" src="assets/isp-cover-light.svg" width="1200">
 </picture>
 
 <p align="center">
-  <a href="docs/getting-started.md"><kbd>01 新手路线</kbd></a>&nbsp;
-  <a href="#providers"><kbd>02 比较商家</kbd></a>&nbsp;
-  <a href="docs/clash-verge.md"><kbd>03 配置验证</kbd></a>&nbsp;
-  <a href="docs/troubleshooting.md"><kbd>04 故障排查</kbd></a>
+  <a href="docs/getting-started.md">新手路线</a>&nbsp;·&nbsp;
+  <a href="#providers">比较商家</a>&nbsp;·&nbsp;
+  <a href="docs/clash-verge.md">配置验证</a>&nbsp;·&nbsp;
+  <a href="docs/troubleshooting.md">故障排查</a>
 </p>
 
-<p align="center"><strong>六大知名商家 · 单 IP 月付 · 真实来源点评 · Clash Verge 链式配置</strong></p>
-
-**从几美元月付到企业级套餐，把静态 ISP 的价格门槛、独享区别、流量限制和用户吐槽一次讲透。** 六家主流厂商放在一起比较，再搭配便宜且可用的入口线路，让固定出口配置从购买到上手都有章可循。
+比较六家厂商的**实付门槛、独享属性与流量规则**，再按步骤建立一条可验证的固定出口链。价格、他人评价和配置方法分别列出，方便按需阅读。
 
 适合想买 **1 个 IP、租 1 个月**，用于网页、ChatGPT、Claude 等服务的读者。本仓库以资料整理与配置指南为主，另收录一例 [IPRoyal 美国 ISP 客服中继实测](docs/iproyal-relay-case-2026-10-16.md)；单次连接结果不能代表所有线路、地区或账号功能。
 
