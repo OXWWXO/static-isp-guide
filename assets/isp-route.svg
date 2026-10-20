@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" role="img" aria-labelledby="title desc">
+<title id="title">入口负责接入，ISP 负责固定出口</title>
+<desc id="desc">设备经加密入口连接静态 ISP，再访问指定网站。普通网页从入口分流，不消耗 ISP 流量。</desc>
+<rect width="1000" height="330" rx="16" fill="#152b39"/>
+<g font-family="Microsoft YaHei,PingFang SC,sans-serif">
+<text x="32" y="43" font-size="14" letter-spacing="2" fill="#a9bac6" font-family="Consolas,monospace">THE ROUTE / 只为需要的网站保留固定出口</text>
+<g fill="none" stroke="#80b1ff" stroke-width="3"><path d="M212 145H285M485 145H558M758 145H814"/><path d="m275 138 10 7-10 7m273-7 10 7-10 7m246-7 10 7-10 7"/></g>
+<g fill="#203e50" stroke="#506979"><rect x="32" y="94" width="180" height="100" rx="9"/><rect x="285" y="94" width="200" height="100" rx="9"/><rect x="558" y="94" width="200" height="100" rx="9"/><rect x="814" y="94" width="154" height="100" rx="9"/></g>
+<g font-size="24" font-weight="700" fill="#f3f2e9" text-anchor="middle"><text x="122" y="138">你的设备</text><text x="385" y="138">加密入口</text><text x="658" y="138">静态 ISP</text><text x="891" y="138">指定网站</text></g>
+<g font-size="15" fill="#b3c5cf" text-anchor="middle"><text x="122" y="169">客户端接管</text><text x="385" y="169">先确认能够连接</text><text x="658" y="169">最后一跳 / 固定出口</text><text x="891" y="169">规则实际命中</text></g>
+<path d="M385 194V264H558" fill="none" stroke="#ffab7d" stroke-width="2" stroke-dasharray="5 6"/><path d="m548 257 10 7-10 7" fill="none" stroke="#ffab7d" stroke-width="2"/>
+<text x="581" y="259" font-size="21" fill="#ffbc94">普通网页与下载 → 按原规则走入口</text><text x="581" y="286" font-size="16" fill="#b3c5cf">不必把所有流量都送入 ISP</text>
+</g></svg>

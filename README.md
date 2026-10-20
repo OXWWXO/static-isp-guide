@@ -1,6 +1,17 @@
 # 2026 静态 ISP 推荐｜六大知名厂商、用户点评与链式代理配置
 
-![数字能量爆发、服务器与光纤网络组成的静态 ISP 指南封面](assets/isp-hero.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/isp-cover-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/isp-cover-light.svg">
+  <img alt="固定出口，从一条链开始：六家厂商、选购门槛与链式配置" src="assets/isp-cover-light.svg" width="1000">
+</picture>
+
+<p align="center">
+  <a href="docs/getting-started.md"><kbd>01 新手路线</kbd></a>&nbsp;
+  <a href="#providers"><kbd>02 比较商家</kbd></a>&nbsp;
+  <a href="docs/clash-verge.md"><kbd>03 配置验证</kbd></a>&nbsp;
+  <a href="docs/troubleshooting.md"><kbd>04 故障排查</kbd></a>
+</p>
 
 <p align="center"><strong>六大知名商家 · 单 IP 月付 · 真实来源点评 · Clash Verge 链式配置</strong></p>
 
@@ -10,9 +21,20 @@
 
 **配套仓库：[VPN-suggestions](https://github.com/OXWWXO/VPN-suggestions)**。入口负责接入，ISP 负责固定出口；普通流量走入口。本仓库商家入口使用官方直达链接，不加推广参数。
 
-> 更新：2026-10-16（补充客服中继实测及客服聊天证据；价格表仍按原查询日期，未重新核价）。美元价格与税费以当前结算页为准。部分历史点评另标日期；共享起价、每 IP 单价、套餐最低实付不能混为一谈。
+> 文档与视觉更新：2026-10-20；实测案例：2026-10-16。价格保留原查询日期，本次未重新核价或测试线路。美元价格与税费以当前结算页为准。部分历史点评另标日期；共享起价、每 IP 单价、套餐最低实付不能混为一谈。
 
-[挑商家](#六大知名-isp-商家直达) · [看别人怎么说](#别人怎么说优点和吐槽一起看) · [学链式配置](docs/clash-verge.md) · [查原始证据](docs/evidence.md)
+## 按你现在的进度阅读
+
+| 当前进度 | 下一步 | 读完要能确认 |
+| --- | --- | --- |
+| 还不确定要不要买 ISP | [新手路线](docs/getting-started.md) · [术语与 FAQ](docs/glossary.md) | 是否需要固定出口、真正要买几 IP |
+| 正在比较商家 | [六家套餐](#providers) · [用户点评](#reviews) · [官方证据](docs/evidence.md) | 总付款、独享属性、FUP 与查询日期 |
+| 已有入口和 ISP | [图形配置](docs/clash-verge.md#图形界面配置) · [脚本](examples/clash-verge-script.js) · [YAML](examples/mihomo-chain.example.yaml) | 入口 → ISP 的方向与规则命中 |
+| 配置后无法使用 | [故障排查](docs/troubleshooting.md) · [真实案例](docs/iproyal-relay-case-2026-10-16.md) | 接管、认证、出口和目标网站分别是否正常 |
+
+**最短上手路线：[确认购买参数](docs/getting-started.md#第二步付款前取得完整参数) → [配置一条链](docs/clash-verge.md) → [逐项验收](docs/getting-started.md#第四步用四项验收)。**
+
+<a id="providers"></a>
 
 ## 六大知名 ISP 商家直达
 
@@ -33,6 +55,8 @@
 
 六家的价格是可核对的入口，不能替代真实测试。更多流量规则与价格变化见 [官方证据](docs/evidence.md)。早期整理中的小众低价名单已退出首页推荐，避免把未核实的低价商家与主流品牌混排。
 
+<a id="reviews"></a>
+
 ## 别人怎么说：优点和吐槽一起看
 
 以下均为**他人的评价摘要**，不是本仓库自己的测评。评测网站可能使用推广链接；用户评论是个例，样本与用途不统一。详情与日期见 [六家点评档案](docs/reviews.md)。
@@ -48,16 +72,7 @@
 
 ## 便宜入口 + 固定出口，怎么组合
 
-![链式代理：设备经过入口，再经过固定 ISP 出口访问网站；普通流量从入口分支](assets/isp-chain.png)
-
-
-```mermaid
-flowchart LR
-    A[你的设备] --> B[便宜且可用的入口线路]
-    B --> C[独享静态 ISP 出口]
-    C --> D[需要固定出口的网站]
-    B --> E[其他普通网页与下载]
-```
+![链路示意：设备经加密入口接入 ISP；指定网站走固定出口，普通流量从入口分流](assets/isp-route.svg)
 
 选择入口时，先找**最低成本但白天、晚高峰都能正常连接**的套餐，再用 ISP 作为最后一跳。没必要只为入口的共享出口额外付“住宅解锁”溢价，但入口带宽、稳定性、端口限制仍重要。
 
@@ -98,3 +113,17 @@ flowchart LR
 2026-10-15 发布前验证：Node.js 24 脚本检查通过；Mihomo v1.19.32 对替换为保留测试 IP、离线本地 provider 的 YAML，以及脚本生成配置执行 `-t` 均通过。没有用真实商家凭据或节点做连接测试。
 
 提交更正时附：官网页面、查询日期、国家、数量、租期、附加项、总价与 FUP。不要附账号、密码、订阅链接、订单截图里的个人资料。详见 [贡献指南](CONTRIBUTING.md)。
+
+## 文档地图与参与维护
+
+| 文档 | 用途 |
+| --- | --- |
+| [新手路线](docs/getting-started.md) | 从需求判断到四项验收 |
+| [术语与 FAQ](docs/glossary.md) | 静态、独享、Private、FUP 与代理协议 |
+| [Clash Verge Rev 配置](docs/clash-verge.md) | 图形操作、脚本、YAML、DNS 与出口验证 |
+| [官方证据](docs/evidence.md) / [第三方点评](docs/reviews.md) | 分开看套餐事实和他人经验 |
+| [故障排查](docs/troubleshooting.md) / [IPRoyal 案例](docs/iproyal-relay-case-2026-10-16.md) | 按层定位和对照历史案例 |
+
+[反馈配置问题](https://github.com/OXWWXO/static-isp-guide/issues/new?template=experience.yml) · [更正价格与资料](https://github.com/OXWWXO/static-isp-guide/issues/new?template=correction.yml) · [贡献指南](CONTRIBUTING.md)
+
+文档本地检查：`python scripts/check_docs.py`（Python 3.9+）。检查本地链接、章节锚点与 SVG；配置检查仍运行 `node tests/config.test.cjs`。这些检查不验证外部商家报价或线路可用性。
