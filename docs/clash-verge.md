@@ -1,8 +1,10 @@
 # Clash Verge Rev：入口线路 + 静态 ISP
 
+[← 返回首页](../README.md) · [新手路线](getting-started.md) · [术语 FAQ](glossary.md) · [故障排查](troubleshooting.md)
+
 首次使用先看 [准备清单与操作顺序](getting-started.md)，填参数时对照 [示例字段说明](../examples/README.md)。本页分别介绍三种配置方式，选择一种完成后再验收。
 
-![两跳接力：设备、入口、ISP 出口、网站](../assets/isp-chain.png)
+![两跳接力：指定网站经入口和固定 ISP，普通流量从入口分流](../assets/isp-route.svg)
 
 
 配套入口参考：[VPN-suggestions](https://github.com/OXWWXO/VPN-suggestions)。先选最低成本但能稳定接入的月付线路，再买一个独享 ISP。先备份当前配置，保留可以恢复的原订阅。
@@ -71,7 +73,7 @@ $env:HTTPS_PROXY = 'http://127.0.0.1:7897'
 
 ## 验证是否配置成功
 
-1. 在“连接”查看目标请求：应命中 `ISP-服务`，链中使用 `ISP-出口` 和预期入口。
+1. 在“连接”查看目标请求：脚本与 YAML 示例应命中 `ISP-服务`，链中使用 `ISP-出口` 和预期入口。图形方式则核对自己创建的链名，确认最后一跳是所购 ISP；不要求使用示例里的名称。
 2. 临时用全局链或把 IP 检测域名加入 `extraDomains`，访问可信 IP 检测服务，确认它看到的出口与商家给出的**出口 IP**一致，然后撤销临时测试设置。
 3. 连续刷新几次、重新连接，确认出口固定。普通入口切换时出口通常应不变；商家维护等事件另算。
 4. 分别测试登录、普通消息、文件上传和实际客户端，记录失败的主机名和日志。不要发布账号、Cookie 或请求内容。
