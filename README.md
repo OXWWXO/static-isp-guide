@@ -34,6 +34,8 @@
 
 **最短上手路线：[确认购买参数](docs/getting-started.md#第二步付款前取得完整参数) → [配置一条链](docs/clash-verge.md) → [逐项验收](docs/getting-started.md#第四步用四项验收)。**
 
+本仓库是一份购买与配置指南，**不是代理服务或可直接运行的客户端**。下载仓库不会获得可用 IP；示例中的 `.invalid`、`CHANGE_ME` 都需要换成你自己的参数。参数来源、替换表和恢复步骤见 [新手路线](docs/getting-started.md) 与 [示例字段说明](examples/README.md)。
+
 <a id="providers"></a>
 
 ## 六大知名 ISP 商家直达
@@ -120,6 +122,7 @@
 | --- | --- |
 | [新手路线](docs/getting-started.md) | 从需求判断到四项验收 |
 | [术语与 FAQ](docs/glossary.md) | 静态、独享、Private、FUP 与代理协议 |
+| [示例字段说明](examples/README.md) | 脚本与 YAML 替换项、字符串填写和检查范围 |
 | [Clash Verge Rev 配置](docs/clash-verge.md) | 图形操作、脚本、YAML、DNS 与出口验证 |
 | [官方证据](docs/evidence.md) / [第三方点评](docs/reviews.md) | 分开看套餐事实和他人经验 |
 | [故障排查](docs/troubleshooting.md) / [IPRoyal 案例](docs/iproyal-relay-case-2026-10-16.md) | 按层定位和对照历史案例 |
